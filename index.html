@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="app.js"></script>
+</head>
+
+<body class="container" onload="onLoad()">
+
+    <div class="header">
+        <h1>Is Andrew Tatham Available? </h1>
+        <h1 class="bg-success hidden">Yes, I am available immediatley for contract .NET development roles in Leeds or working remotley</h1>
+        <h1 class="bg-danger">No. I am currently in contract until Mid June </h1>
+
+        <p class="lead">Feel free to email me at <strong>andrewtatham at gmail dot com</strong><br/> To unlock my phone number please answer the below questions.</p>
+    </div>
+
+    <div class="q">
+        <p>Is this a <button type="button" data="n">Permanent</button> or <button type="button" data="y">Contract</button> role?</p>
+        <div class="n hidden">
+            <p>I'm only interested in contract roles at present.
+        </div>
+    </div>
+    <div class="q hidden">
+        <p>Is this role located in... </p>
+        <ul>
+            <li><button type="button" data="y">Leeds</button></li>
+            <li><button type="button" data="y">Near Leeds</button></li>
+            <li><button type="button" data="n">Other</button></li>
+        </ul>
+        <p> or is this a <button type="button" data="y">Remote Working</button> Role?</p>
+
+        <div class="n hidden">
+            <p> I'm only interested in roles in the immediate Leeds area or roles that offer full remote working.</p>
+        </div>
+    </div>
+    <div class="q hidden">
+        <p>Is this role located in... </p>
+        <ul>
+            <li><button type="button" data="f">.NET, C#</button></li>
+            <li><button type="button" data="n">Java</button></li>
+            <li><button type="button" data="n">Other</button></li>
+        </ul>
+        <div class="n hidden">
+            <p>No.</p>
+        </div>
+    </div>
+    <div class="f hidden">
+        Congratulations. My phone number is 07989 341845
+    </div>
+
+
+</body>
+
+</html>
