@@ -8,26 +8,30 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <script type="text/javascript" src="questions.js"></script>
     <script type="text/javascript" src="app.js"></script>
 </head>
 
 <body class="container" onload="onLoad()">
 
-    <div class="header">
-        <em>"I found your CV online and wanted to know..."</em>
+    <div class="page-header">
+        <em>You've found my CV online and wanted to know...</em>
         <h1>Q: Is Andrew Tatham Available? </h1>
-        <h1 class="bg-success hidden">A: Yes, I am available immediatley for <span class="lookingFor"></span></h1>
-        <h1 class="bg-danger">A: No. I am currently in contract until Mid June </h1>
-
-        <p>Please note that I am looking for <span class="lookingFor">.</span></p>
+        <div id="available" class="hidden">
+            <h1 class="alert alert-success">A: Yes, I am available <span id="availableFrom" /> for <span class="lookingFor" /></h1>
+        </div>
+        <div id="unavailable" class="hidden">
+            <h1 class="alert alert-danger">A: No. I am currently in contract until <span id="inContractUntil" /> </h1>
+            <p>Please note that I am only interested in <span class="lookingFor">.</span></p>
+        </div>
         <p>Feel free to email me at <strong>andrewtatham at gmail dot com</strong></p>
         <p>To unlock my phone number please answer the below questions.</p>
     </div>
     <div id="questions" class="questions"></div>
     <div id="winner" class="winner hidden"></div>
 
-    <footer><small><em><p class="text-center text-muted">I get an excessive amount of speculative and often irrelevant calls to my phone. Please do not call unless you are certain that the opportunity matches my requirements. Thankyou.</p></em></small></footer>
+    <footer><small><em><p class="text-muted">I get an excessive amount of speculative and often irrelevant calls to my phone. Please do not call unless you are certain that the opportunity matches my requirements. Thankyou.</p></em></small></footer>
 </body>
 
 </html>

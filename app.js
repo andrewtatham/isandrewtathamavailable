@@ -5,25 +5,26 @@ var questionElements = [];
 
 function buildWinner() {
     var winner = document.getElementById("winner");
-    winner.classList.add("bg-success");
+    winner.classList.add('alert', "alert-success");
 
     var winnerIcon = document.createElement("span")
     winnerIcon.classList.add('glyphicon', 'glyphicon-ok', 'pull-left');
     winner.appendChild(winnerIcon);
 
     var winnerText = document.createElement("p")
-    winnerText.classList.add('lead');
-    winnerText.innerHTML = "Congratulations. You have successfully identified that I am looking for " + lookingFor + ". Here is my phone number:";
+    winnerText.innerHTML = "Congratulations. You have successfully identified that I am looking for " + lookingFor + ".";
     winner.appendChild(winnerText);
+
+
 
     var phoneIcon = document.createElement("span")
     phoneIcon.classList.add('glyphicon', 'glyphicon-earphone', 'pull-left');
     winner.appendChild(phoneIcon);
 
-    var winnerText = document.createElement("p")
-    winnerText.classList.add('lead');
-    winnerText.innerHTML = atob("MDc5ODkzNDE4NDU=");
-    winner.appendChild(winnerText);
+    var phoneText = document.createElement("p")
+    phoneText.classList.add('lead');
+    phoneText.innerHTML = 'My telephone number is ' + atob("MDc5ODkzNDE4NDU=");
+    winner.appendChild(phoneText);
 
     return winner;
 }
@@ -51,6 +52,7 @@ function onN() {
 function buildButton(text, click) {
     var button = document.createElement("button");
     button.classList.add('btn', 'btn-primary');
+    button.setAttribute('type', 'button');
     button.textContent = text;
     button.addEventListener("click", click);
     return button;
@@ -72,40 +74,35 @@ function buildQuestion(question) {
 }
 
 function buildButtons(question) {
-    var ul = document.createElement("ul");
-    ul.classList.add('buttons', 'list-unstyled', 'list-inline');
+    var buttonGroup = document.createElement("div");
+    buttonGroup.setAttribute('role', 'group');
+    buttonGroup.classList.add('buttons', 'btn-group');
     for (j = 0; j < question.y.length; j++) {
         var yButton = buildButton(question.y[j], function () {
             onY();
         });
-        var li = document.createElement("li");
-        li.appendChild(yButton)
-        ul.appendChild(li);
+        buttonGroup.appendChild(yButton);
     }
     for (j = 0; j < question.n.length; j++) {
         var nButton = buildButton(question.n[j], function () {
             onN();
         });
-        var li = document.createElement("li");
-        li.appendChild(nButton)
-        ul.appendChild(li);
+        buttonGroup.appendChild(nButton);
     }
-    return ul;
+    return buttonGroup;
 }
 
 
 function buildFailElement(question) {
 
     var failElement = document.createElement("div");
-    failElement.classList.add('fail', 'hidden', 'bg-danger');
-
+    failElement.classList.add('fail', 'hidden', 'alert', 'alert-danger');
 
     var failIcon = document.createElement("span")
     failIcon.classList.add('glyphicon', 'glyphicon-remove', 'pull-left');
     failElement.appendChild(failIcon);
 
     var failText = document.createElement("p")
-    failText.classList.add('lead');
     failText.innerHTML = question.f;
     failElement.appendChild(failText);
 
@@ -128,6 +125,16 @@ function buildQuestionElement(question) {
 
 
 function onLoad() {
+
+    if (isAvailable) {
+        document.getElementById("availableFrom").innerHTML = availableFrom;
+        document.getElementById("available").classList.remove("hidden");
+    } else {
+        document.getElementById("inContractUntil").innerHTML = inContractUntil;
+        document.getElementById("unavailable").classList.remove("hidden");
+    }
+
+
 
     var lookingForElements = document.getElementsByClassName("lookingFor");
     for (i = 0; i < lookingForElements.length; i++) {

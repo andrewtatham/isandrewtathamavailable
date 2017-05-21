@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+    padding-bottom: 6rem;
+}
+
+p {
+    padding: 1rem;
+}
+
+span.glyphicon {
+    padding: 1rem;
+}
+
+footer {
+    padding: 1rem;
+}
