@@ -1,59 +1,81 @@
 'use strict';
 var i, j, k;
 var currentQuestion = 0;
+var questionElements = [];
 
-function OnAnswer() {
+
+function onY() {
+    questionElements[currentQuestion].classList.add('hidden');
     currentQuestion += 1;
-    var questions = document.getElementsByClassName("q");
-
-    for (k = 0; k < questions.length; k++) {
-        var question = questions[k];
-        var n = question.getElementsByClassName("n")[0];
-
-        if (k === currentQuestion) {
-            question.classList.remove("hidden");
-            n.classList.add("hidden");
-        } else {
-            question.classList.add("hidden");
-        }
+    if (currentQuestion >= questionElements.length) {
+        var winner = document.getElementById("winner");
+        winner.innerHTML = atob("MDc5ODkzNDE4NDU=");
+        winner.classList.remove("hidden");
+    } else {
+        questionElements[currentQuestion].classList.remove('hidden');
     }
 }
 
-function OnButtonClick(question, button) {
-    var a = button.getAttribute("data");
-    var n = question.getElementsByClassName("n")[0];
-    if (a === "y") {
-        question.classList.add("hidden");
-        n.classList.add("hidden");
-        OnAnswer();
-    } else if (a === "n") {
-        question.classList.remove("hidden");
-        n.classList.remove("hidden");
-    } else if (a === "f") {
-        var v = question.getElementsByClassName("f")[0];
-        f.classList.remove("hidden");
+function onN() {
+    var q = questionElements[currentQuestion];
+    var buttons = q.getElementsByClassName("buttons")[0];
+    buttons.classList.add("hidden");
+    var fail = q.getElementsByClassName("fail")[0];
+    fail.classList.remove("hidden");
+}
 
-        question.classList.add("hidden");
-        n.classList.add("hidden");
-        OnAnswer();
+function buildQuestionElement(question) {
+
+    var questionElement = document.createElement("div");
+    questionElement.classList.add('question');
+    questionElement.innerHTML = question.q;
+    if (i != 0) {
+        questionElement.classList.add('hidden');
     }
 
+
+    var ul = document.createElement("ul");
+    ul.classList.add('buttons');
+    for (j = 0; j < question.y.length; j++) {
+        var yButton = document.createElement("button");
+        yButton.textContent = question.y[j];
+        yButton.addEventListener("click", function () {
+            onY();
+        });
+        var li = document.createElement("li");
+        li.appendChild(yButton)
+        ul.appendChild(li);
+    }
+    for (j = 0; j < question.n.length; j++) {
+        var nButton = document.createElement("button");
+        nButton.textContent = question.n[j];
+        nButton.addEventListener("click", function () {
+            onN();
+        });
+        var li = document.createElement("li");
+        li.appendChild(nButton)
+        ul.appendChild(li);
+    }
+    questionElement.appendChild(ul);
+
+
+    var fElement = document.createElement("div");
+    fElement.classList.add('fail', 'hidden');
+    fElement.innerHTML = question.f;
+    questionElement.appendChild(fElement);
+    return questionElement;
+
 }
+
+
 
 function onLoad() {
 
-    var questions = document.getElementsByClassName("q");
+    var questionsElement = document.getElementById("questions");
     for (i = 0; i < questions.length; i++) {
-        var question = questions[i];
-        var buttons = question.getElementsByTagName("button");
-        for (j = 0; j < buttons.length; j++) {
-            var button = buttons[j]
-            button.addEventListener("click", function () {
-                OnButtonClick(question, button);
-            });
-        }
-
-
+        var questionElement = buildQuestionElement(questions[i]);
+        questionsElement.appendChild(questionElement);
+        questionElements.push(questionElement);
     }
 
 }
