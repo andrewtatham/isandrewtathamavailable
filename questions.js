@@ -1,3 +1,5 @@
+var lookingFor = "C#.NET Contract Development opportunities in the imediate Leeds area, or working remotley";
+
 var questions = [
     {
         q: 'Is this a contract role?',
