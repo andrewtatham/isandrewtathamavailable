@@ -1,6 +1,6 @@
 var isAvailable = false;
-var inContractUntil = "the beginning of May";
-var availableFrom = "the beginning of May";
+var inContractUntil = "July";
+var availableFrom = "July";
 var lookingFor = "C#.NET/ASP.NET MVC contract development opportunities in the immediate Leeds area, or working remotley";
 
 var questions = [{
