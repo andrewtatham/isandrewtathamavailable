@@ -1,3 +1,3 @@
 var isAvailable = false;
-var inContractUntil = "the end of July";
-var availableFrom = "the end of July";
+var inContractUntil = "the end of September";
+var availableFrom = "the end of September";
