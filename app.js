@@ -2,51 +2,36 @@
 var i, j, k;
 var currentQuestion = 0;
 var questionElements = [];
+var foo = 'My telephone number is '
+var bar = 'MDc5ODkzNDE4NDU=';
 
 function buildWinner() {
-    var winner = document.getElementById("winner");
-    winner.classList.add('alert', "alert-success");
-
-    var winnerIcon = document.createElement("span")
-    winnerIcon.classList.add('glyphicon', 'glyphicon-ok', 'pull-left');
-    winner.appendChild(winnerIcon);
-
-    var winnerText = document.createElement("p")
-    winnerText.innerHTML = "Congratulations. You have successfully identified that I am looking for " + lookingFor + ".";
-    winner.appendChild(winnerText);
-
-
-
-    var phoneIcon = document.createElement("span")
-    phoneIcon.classList.add('glyphicon', 'glyphicon-earphone', 'pull-left');
-    winner.appendChild(phoneIcon);
-
-    var phoneText = document.createElement("p")
-    phoneText.classList.add('lead');
-    phoneText.innerHTML = 'My telephone number is ' + atob("MDc5ODkzNDE4NDU=");
-    winner.appendChild(phoneText);
+    var winner = $('#winner');
+    winner.addClass('alert alert-success');
+    var winnerIcon = '<i class="fa fa-check fa-5x fa-pull-left" aria-hidden="true"></i>';
+    winner.append(winnerIcon);
+    var phoneText =  $('<p class="lead">' + foo + '<b>' + atob(bar) + '</b></p>');
+    winner.append(phoneText);
 
     return winner;
 }
 
 
 function onY() {
-    questionElements[currentQuestion].classList.add('hidden');
+    $(questionElements[currentQuestion]).hide();
     currentQuestion += 1;
     if (currentQuestion >= questionElements.length) {
         var winner = buildWinner();
-        winner.classList.remove("hidden");
+        $(winner).show();
     } else {
-        questionElements[currentQuestion].classList.remove('hidden');
+        $(questionElements[currentQuestion]).show();
     }
 }
 
 function onN() {
     var q = questionElements[currentQuestion];
-    var buttons = q.getElementsByClassName("buttons")[0];
-    buttons.classList.add("hidden");
-    var fail = q.getElementsByClassName("fail")[0];
-    fail.classList.remove("hidden");
+    $(q).find('.buttons').hide();
+    $(q).find('.fail').show();
 }
 
 function buildButton(text, click) {
@@ -59,24 +44,17 @@ function buildButton(text, click) {
 }
 
 function buildQuestion(question) {
-    var questionElement = document.createElement("div");
-    questionElement.classList.add('question');
+    var questionElement = $('<div class="question"><p class="blockquote">' + question.q +  '</p></>');
     if (i != 0) {
-        questionElement.classList.add('hidden');
+        $(questionElement).hide();
     }
-
-    var questionText = document.createElement("p")
-    questionText.classList.add('lead');
-    questionText.innerHTML = question.q;
-    questionElement.appendChild(questionText);
-
     return questionElement;
 }
 
 function buildButtons(question) {
     var buttonGroup = document.createElement("div");
     buttonGroup.setAttribute('role', 'group');
-    buttonGroup.classList.add('buttons', 'btn-group');
+    buttonGroup.classList.add('buttons');
     for (j = 0; j < question.y.length; j++) {
         var yButton = buildButton(question.y[j], function () {
             onY();
@@ -95,57 +73,56 @@ function buildButtons(question) {
 
 function buildFailElement(question) {
 
-    var failElement = document.createElement("div");
-    failElement.classList.add('fail', 'hidden', 'alert', 'alert-danger');
-
-    var failIcon = document.createElement("span")
-    failIcon.classList.add('glyphicon', 'glyphicon-remove', 'pull-left');
-    failElement.appendChild(failIcon);
-
-    var failText = document.createElement("p")
-    failText.innerHTML = question.f;
-    failElement.appendChild(failText);
-
+    var failElement = $('<div class="fail alert alert-danger">');
+    var failIcon = '<i class="fa fa-times fa-5x fa-pull-left" aria-hidden="true"></i>';
+    failElement.append(failIcon);
+    var failText = $("<p>")
+    failText.html(question.f);
+    failElement.append(failText);
+    $(failElement).hide()
     return failElement;
 }
 
 function buildQuestionElement(question) {
-
     var questionElement = buildQuestion(question);
-
     var buttons = buildButtons(question);
-    questionElement.appendChild(buttons);
-
+    questionElement.append(buttons);
     var failElement = buildFailElement(question);
-    questionElement.appendChild(failElement);
+    questionElement.append(failElement);
     return questionElement;
 
 }
 
-
+function buildList(items){
+    var html = '<ul>';
+    $.each(items,function(i, x){
+       html += '<li>' + x + '</li>';        
+    });
+    html += '</ul>'
+    return html;
+}
 
 function onLoad() {
-
     if (isAvailable) {
-        document.getElementById("availableFrom").innerHTML = availableFrom;
-        document.getElementById("available").classList.remove("hidden");
+        $(".availableFrom").html(availableFrom);
+        $(".available").show();
+        $(".unavailable").hide();      
+        var questionsElement = $("#questions");
+        for (i = 0; i < questions.length; i++) {
+            var questionElement = buildQuestionElement(questions[i]);
+            questionsElement.append(questionElement);
+            questionElements.push(questionElement);
+        }
+        
     } else {
-        document.getElementById("inContractUntil").innerHTML = inContractUntil;
-        document.getElementById("unavailable").classList.remove("hidden");
+        $(".inContractUntil").html(inContractUntil);
+        $(".available").hide();
+        $(".unavailable").show();
     }
-
-
-
-    var lookingForElements = document.getElementsByClassName("lookingFor");
-    for (i = 0; i < lookingForElements.length; i++) {
-        lookingForElements[i].innerHTML = lookingFor;
-    }
-
-    var questionsElement = document.getElementById("questions");
-    for (i = 0; i < questions.length; i++) {
-        var questionElement = buildQuestionElement(questions[i]);
-        questionsElement.appendChild(questionElement);
-        questionElements.push(questionElement);
-    }
+    
+    $(".lookingFor").html(buildList(lookingFor));
+    $(".locations").html(buildList(locations));
+    $(".notLookingFor").html(buildList(notLookingFor));
+    $(".notLocations").html(buildList(notLocations));
 
 }

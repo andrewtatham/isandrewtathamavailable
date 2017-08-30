@@ -1,16 +1,22 @@
-body {
+.available{
+    display: none
+}
+.unavailable{
+    display: none
+}
+
+.quiz{
     text-align: center;
-    padding-bottom: 6rem;
 }
 
-p {
-    padding: 1rem;
+.row{
+    padding-bottom: 1em;
 }
 
-span.glyphicon {
-    padding: 1rem;
+.card{
+    width: 100%;
 }
 
-footer {
-    padding: 1rem;
+button.btn{
+    margin: 6px;
 }

@@ -2,40 +2,160 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Is Andrew Tatham Available?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="Andrew Tatham, Contract Software Developer, Leeds, Microsoft C#.NET, SQL Server"/>
+    <meta name="description" content="Andrew Tatham, a contract .NET software developer from Leeds, shares his latest availability through this website, for the benefit of recruiters, who will hopefully read it and act upon the information within, and stop calling with irrelevant roles."/>
+    <meta name="robots" content="index,follow"/>    
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+    
+    <script src="https://use.fontawesome.com/433fce5395.js"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    
+    
+    
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <script type="text/javascript" src="availability.js"></script>
-    <script type="text/javascript" src="questions.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+
 </head>
 
 <body class="container" onload="onLoad()">
 
     <div class="page-header">
         <em>You've found my CV online and wanted to know...</em>
-        <h1>Q: Is Andrew Tatham Available? </h1>
-        <div id="available" class="hidden">
-            <h1 class="alert alert-success">A: Yes. I am available <span id="availableFrom" /> for <span class="lookingFor" /></h1>
-        </div>
-        <div id="unavailable" class="hidden">
-            <h1 class="alert alert-danger">A: No. I am currently in contract until <span id="inContractUntil" /> </h1>
-            <p>Please note that I am only interested in <span class="lookingFor">.</span></p>
-        </div>
-        <p>Feel free to email me at <strong>andrewtatham at gmail dot com</strong></p>
-        <p>To unlock my phone number please answer the below questions.</p>
     </div>
-    <div id="questions" class="questions"></div>
-    <div id="winner" class="winner hidden"></div>
+    
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <h1>Q: Is Andrew Tatham Available? </h1>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="available">
+                <h1 class="alert alert-success">A: Yes. I am available from <b><span class="availableFrom" /></b>.</h1>
+            </div>
+
+            <div class="unavailable">
+                <div class="alert alert-danger">
+                    <h1 class="alert-heading">A: No, please do not call.</h1>
+                    <h2>
+                        <ul>
+                            <li>I am in contract until <b><span class="inContractUntil" /></b>.</li>
+                            <li>I am not interested in new opportunities right now.</li>
+                            <li>I'm busy working hard for my current client and do not want to be distracted.</li>
+                        </ul>
+                    </h2>
+                </div>
+
+
+            </div>
+        
+        </div>
+    </div>
+
+    <div class="available">
+        
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="card card-outline-primary">
+                    <div class="card-block">                
+                        <div class="quiz">
+                            <p class="lead">To unlock my phone number please answer the below questions.</p>
+                            <div id="questions" class="questions"></div>
+                            <div id="winner" class="winner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h2>Skills:</h2>
+        
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="card card-outline-success">
+                    <div class="card-block">
+                        <i class="fa fa-check fa-5x fa-pull-left" aria-hidden="true"></i>
+
+                        <div><span class="lookingFor">.</span></div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 justify-content-center">
+                <div class="card card-outline-danger">
+                    <div class="card-block">
+                        <i class="fa fa-times fa-5x fa-pull-left" aria-hidden="true"></i>
+
+                        <div><span class="notLookingFor"></span></div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <h2>Locations:</h2>
+        
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="card card-outline-success">
+                    <div class="card-block">
+                        <i class="fa fa-check fa-5x fa-pull-left" aria-hidden="true"></i>
+
+                        <div><span class="locations"></span></div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card card-outline-danger">
+                    <div class="card-block">
+                        <i class="fa fa-times fa-5x fa-pull-left" aria-hidden="true"></i>
+
+                        <div><span class="notLocations"></span></div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <h2>Email:</h2>
+    
+    <div class="row">
+        <div class="col-12">
+            <p>Please email me at <b>andrewtatham at gmail dot com</b> if you're unsure.</p>
+        </div>
+    </div>
+
+        
+    <h2>Websites:</h2>
+    
+    <div class="row">
+        <div class="col-12">
+            <p><a href="http://andrewtatham.com/">http://andrewtatham.com/</a> my personal site containing nothing of value</p>
+            <p><a href="http://kaizensoftwareengineering.com/">http://kaizensoftwareengineering.com/</a> my business site containing nothing of value</p>
+        </div>
+    </div>
 
     <footer><small><em><p class="text-muted">I get an excessive amount of speculative and often irrelevant calls to my phone. Please do not call unless you are certain that the opportunity matches my requirements. Thankyou.</p></em></small></footer>
-
+    
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    
+    <script type="text/javascript" src="availability.js"></script>
+    <script type="text/javascript" src="questions.js"></script>
+    <script type="text/javascript" src="app.js"></script>  
+    
     <script>
         (function(i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
