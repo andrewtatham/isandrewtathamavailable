@@ -7,7 +7,7 @@ var bar = 'MDc5ODkzNDE4NDU=';
 
 function buildWinner() {
     var winner = $('#winner');
-    winner.addClass('alert alert-success');
+    winner.addClass('alert alert-success clearfix');
     var winnerIcon = '<i class="fa fa-check fa-5x fa-pull-left" aria-hidden="true"></i>';
     winner.append(winnerIcon);
     var phoneText = $('<p class="lead">' + foo + '<b>' + atob(bar) + '</b></p>');
@@ -79,7 +79,7 @@ function buildButtons(question) {
 
 function buildFailElement(question) {
 
-    var failElement = $('<div class="fail alert alert-danger">');
+    var failElement = $('<div class="fail alert alert-danger clearfix">');
     var failIcon = '<i class="fa fa-times fa-5x fa-pull-left" aria-hidden="true"></i>';
     failElement.append(failIcon);
     var failText = $("<p>")
