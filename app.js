@@ -2,17 +2,14 @@
 var i, j, k;
 var currentQuestion = 0;
 var questionElements = [];
-var foo = 'My telephone number is '
+var foo = 'My telephone number is ';
 var bar = 'MDc5ODkzNDE4NDU=';
 
 function buildWinner() {
     var winner = $('#winner');
     winner.addClass('alert alert-success clearfix');
-    var winnerIcon = '<i class="fa fa-check fa-5x fa-pull-left" aria-hidden="true"></i>';
-    winner.append(winnerIcon);
-    var phoneText = $('<p class="lead">' + foo + '<b>' + atob(bar) + '</b></p>');
+    var phoneText = $('<h1><i class="fa fa-check"></i> ' + foo + '<b>' + atob(bar) + '</b></h1>');
     winner.append(phoneText);
-
     return winner;
 }
 
@@ -23,9 +20,6 @@ function onY() {
     if (currentQuestion >= questionElements.length) {
         var winner = buildWinner();
         $(winner).show();
-        dataLayer.push({
-            "event": "phone_number"
-        });
     } else {
         $(questionElements[currentQuestion]).show();
     }
@@ -35,14 +29,12 @@ function onN() {
     var q = questionElements[currentQuestion];
     $(q).find('.buttons').hide();
     $(q).find('.fail').show();
-    dataLayer.push({
-        "event": "fail"
-    });
 }
 
-function buildButton(text, click) {
+function buildButton(text, classlist, click) {
     var button = document.createElement("button");
-    button.classList.add('btn', 'btn-primary');
+    button.classList.add('btn');
+    button.classList.add(classlist);
     button.setAttribute('type', 'button');
     button.textContent = text;
     button.addEventListener("click", click);
@@ -50,7 +42,7 @@ function buildButton(text, click) {
 }
 
 function buildQuestion(question) {
-    var questionElement = $('<div class="question"><p class="blockquote">' + question.q + '</p></>');
+    var questionElement = $('<div class="question"><p>' + question.q + '</p></>');
     if (i != 0) {
         $(questionElement).hide();
     }
@@ -62,13 +54,13 @@ function buildButtons(question) {
     buttonGroup.setAttribute('role', 'group');
     buttonGroup.classList.add('buttons');
     for (j = 0; j < question.y.length; j++) {
-        var yButton = buildButton(question.y[j], function () {
+        var yButton = buildButton(question.y[j], 'btn-success', function () {
             onY();
         });
         buttonGroup.appendChild(yButton);
     }
     for (j = 0; j < question.n.length; j++) {
-        var nButton = buildButton(question.n[j], function () {
+        var nButton = buildButton(question.n[j], 'btn-danger', function () {
             onN();
         });
         buttonGroup.appendChild(nButton);
@@ -80,10 +72,7 @@ function buildButtons(question) {
 function buildFailElement(question) {
 
     var failElement = $('<div class="fail alert alert-danger clearfix">');
-    var failIcon = '<i class="fa fa-times fa-5x fa-pull-left" aria-hidden="true"></i>';
-    failElement.append(failIcon);
-    var failText = $("<p>")
-    failText.html(question.f);
+    var failText = '<h1><i class="fa fa-times"></i> ' + question.f + '</h1>';
     failElement.append(failText);
     $(failElement).hide()
     return failElement;

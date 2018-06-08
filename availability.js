@@ -1,3 +1,3 @@
 var isAvailable = true;
-var inContractUntil = "the end of May (and likely to renew)";
-var availableFrom = "the 29th of May";
+var inContractUntil = "I'm in contract until [date]";
+var availableFrom = "Yes. I'm available immediatley";

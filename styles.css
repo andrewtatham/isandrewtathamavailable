@@ -1,22 +1,18 @@
-.available{
-    display: none
-}
-.unavailable{
+.available {
     display: none
 }
 
-.quiz{
+.unavailable {
+    display: none
+}
+
+.quiz {
+    font-size: 2em;
     text-align: center;
+    margin: 1em 1em 2em 1em;
 }
 
-.row{
-    padding-bottom: 1em;
-}
-
-.card{
-    width: 100%;
-}
-
-button.btn{
-    margin: 6px;
+.quiz .btn {
+    font-size: 1em;
+    margin: 1px;
 }
