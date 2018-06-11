@@ -1,0 +1,21 @@
+
+
+<div *ngIf="hasQuestion">
+<h2>{{ question.questionText }}</h2>
+<ul class="">
+  <li *ngFor="let answer of question.allAnswers"
+    [class.selected]="answer.classList"
+    (click)="onSelectAnswer(answer)">
+    {{answer.text}}
+  </li>
+</ul>
+</div>
+
+<div *ngIf="isWinner">
+  <h2>{{ winner.text }}</h2>
+</div>
+
+<div *ngIf="isLoser">
+  <h2>{{ loser.text }}</h2>
+</div>
+
