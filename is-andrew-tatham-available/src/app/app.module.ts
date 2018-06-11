@@ -5,12 +5,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { QuestionDetailComponent } from './question-detail/question-detail.component';
+import { AvailabilityDetailComponent } from './availability-detail/availability-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuizComponent,
-    QuestionDetailComponent
+    QuestionDetailComponent,
+    AvailabilityDetailComponent
   ],
   imports: [
     CommonModule,
