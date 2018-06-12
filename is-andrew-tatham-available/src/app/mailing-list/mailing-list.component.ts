@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Availability } from '../availability';
+import { AvailabilityService } from '../availability.service';
 
 @Component({
   selector: 'app-mailing-list',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mailing-list.component.css']
 })
 export class MailingListComponent implements OnInit {
-
-  constructor() { }
+  availability: Availability;
+  constructor(private availabilityService:AvailabilityService) {
+  }
 
   ngOnInit() {
+    let availability = this.availabilityService.getAvailability();
+    this.availability = availability;
   }
 
 }

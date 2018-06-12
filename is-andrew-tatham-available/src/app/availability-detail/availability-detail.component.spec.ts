@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { AvailabilityDetailComponent } from './availability-detail.component';
 
 describe('AvailabilityDetailComponent', () => {
@@ -8,9 +7,9 @@ describe('AvailabilityDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AvailabilityDetailComponent ]
+      declarations: [AvailabilityDetailComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

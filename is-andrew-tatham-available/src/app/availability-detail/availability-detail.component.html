@@ -1,35 +1,30 @@
 <p>
   <em>You've found my CV online and wanted to know...</em>
 </p>
-<h1>Is Andrew Tatham Available?</h1>
+<div class="text-center">
+  <h1>Is Andrew Tatham Available?</h1>
 
-<div *ngIf="availability.isAvailable">
-  <div class="alert alert-success">
-    <h1>
-      <i class="fas fa-check"></i>
-      <b>{{availability.availableText}}</b>.</h1>
-    <h2>
-      <i class="fas fa-mobile-alt"></i> To unlock my phone number please answer the below questions.</h2>
+
+
+  <div *ngIf="availability.isAvailable">
+    <div class="alert alert-success">
+      <h1>
+        <i class="fas fa-check"></i>
+        <b>{{availability.availableText}}</b>.</h1>
+      <h2>
+        <i class="fas fa-mobile-alt"></i> To unlock my phone number please answer the below questions.</h2>
+    </div>
+
+    <app-quiz></app-quiz>
+
   </div>
 
-  <app-quiz></app-quiz>
+  <div *ngIf="!availability.isAvailable">
+    <div class="alert alert-danger">
 
-</div>
-
-<div *ngIf="!availability.isAvailable">
-  <div class="alert alert-danger">
-
-    <h1 class="alert-heading">
-      <i class="fas fa-times"></i> No, I'm not available right now.</h1>
-    <h2>
-      <ul>
-        <li>
-          <b>{{availability.unavailableText}}</b>.</li>
-        <li>I am not interested in new opportunities right now.</li>
-        <li>I'm busy working hard for my current client and do not want to be distracted.</li>
-        <li>Please do not call.</li>
-      </ul>
-    </h2>
+      <h1 class="alert-heading">
+        <i class="fas fa-times"></i> No, I'm not available. {{availability.unavailableText}}
+      </h1>
+    </div>
   </div>
-  <div></div>
 </div>
