@@ -11,14 +11,14 @@
   </div>
 
   <div *ngIf="isWinner">
-    <div class="alert alert-success clearfix">
+    <div class="alert alert-success alert-auto clearfix">
       <h1>
         <i class="fa fa-check"></i> {{ winner.text }}</h1>
     </div>
   </div>
 
   <div *ngIf="isLoser">
-    <div class="alert alert-danger clearfix">
+    <div class="alert alert-danger alert-auto clearfix">
       <h1>
         <i class="fa fa-times"></i> {{ loser.text }}</h1>
     </div>
