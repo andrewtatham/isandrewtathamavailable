@@ -6,16 +6,30 @@
   <title>Is Andrew Tatham Available?</title>
   <base href="/">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="Andrew Tatham, Contract Software Developer, Leeds, Microsoft C#.NET, SQL Server" />
-  <meta name="description" content="Andrew Tatham, a contract .NET software developer from Leeds, shares his latest availability through this website, for the benefit of recruiters, who will hopefully read it and act upon the information within, and stop calling with irrelevant roles."/>
+  <meta name="description" content="Andrew Tatham, a contract .NET software developer from Leeds, shares his latest availability through this website, for the benefit of recruiters, who will hopefully read it and act upon the information within, and stop calling with irrelevant roles."
+  />
   <meta name="robots" content="index,follow" />
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
 
 </head>
 
-<body class="container">
-  <app-root><i class="fas fa-cog fa-spin"></i> Loading...</app-root>
+<body>
+  <div id="particles-js"></div>
+  <div class="container">
+    <app-root>
+      <i class="fas fa-cog fa-spin"></i> Loading...</app-root>
+  </div>
+  <script src="/assets/particles.min.js"></script>
+  <script>
+    particlesJS.load('particles-js', 'assets/particlesjs-config.json', function () {
+      console.log('callback - particles.js config loaded');
+    });
+
+  </script>
 </body>
+
 </html>
