@@ -7,9 +7,9 @@ export class AvailabilityService {
 
   constructor() { }
   getAvailability(): Availability {
-    let isAvailable = true;
+    let isAvailable = false;
     let availableText = "I'm available immediately";
-    let unavailableText = "I'm in contract until [date]";
+    let unavailableText = "I'm not available right now.";
 
     let availability = new Availability(
       isAvailable,
