@@ -4,8 +4,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class GoogleAnalyticsService {
-
-  public emitEvent(eventy: string) {
-    (<any>window).gtag('event', eventy);
+  public emitEvent(action: string, category:string = null, label:string = null) {
+    (<any>window).gtag('event', action,  {
+      'event_category' : category,
+      'event_label' : label
+    });
   }
 }

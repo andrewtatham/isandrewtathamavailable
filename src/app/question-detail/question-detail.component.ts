@@ -24,11 +24,13 @@ export class QuestionDetailComponent implements OnInit {
 
   onSelectAnswer(answer: Answer) {
     let result = this.question.evaluateAnswer(answer);
-    this.googleAnalyticsEventsService.emitEvent(answer.isCorrect + ': ' + answer.text);
+    this.googleAnalyticsEventsService.emitEvent(
+      answer.isCorrect ? "correct" : "incorrect",
+      "button_click",
+      answer.text);
 
     if (result instanceof Question) {
       this.question = result;
-      this.googleAnalyticsEventsService.emitEvent(this.question.questionText);
     }
 
     if (result instanceof Winner) {
@@ -37,8 +39,7 @@ export class QuestionDetailComponent implements OnInit {
       this.hasQuestion = false;
       this.winner = result;
       this.isWinner = true;
-      this.googleAnalyticsEventsService.emitEvent("WINNER");
-
+      this.googleAnalyticsEventsService.emitEvent("win", "quiz_result", this.winner.text);
     }
 
     if (result instanceof Loser) {
@@ -46,7 +47,7 @@ export class QuestionDetailComponent implements OnInit {
       this.hasQuestion = false;
       this.loser = result;
       this.isLoser = true;
-      this.googleAnalyticsEventsService.emitEvent("Loser");
+      this.googleAnalyticsEventsService.emitEvent("lose", "quiz_result", this.loser.text);
     }
 
 
