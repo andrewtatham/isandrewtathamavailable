@@ -10,7 +10,7 @@ export class AvailabilityService {
   getAvailability(): Availability {
     let isAvailable = false;
     let month = new DatePipe('en-GB').transform(this.addDays(new Date(), 30), 'MMMM');
-    let availableText = "I'm available immediately.";
+    let availableText = "I'm available from February 2019.";
     let unavailableText = "I'm not available. I'm in contract until the end of " + month + ". Please do not call.";
 
     let availability = new Availability(
