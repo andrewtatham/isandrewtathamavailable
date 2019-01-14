@@ -18,7 +18,7 @@ export class Availability {
             else {
                 availabilityText += "from " + datePipe.transform(actualAvailableFrom, 'd MMMM yyyy');
             }
-            availabilityText += " for contract .NET development roles, either in Leeds or working remotley."
+            availabilityText += " for contract .NET development roles, either in Leeds or working remotely."
         } else {
             //let autoDate = this.addDays(now, 30);
             //let month = datePipe.transform(autoDate, 'MMMM');

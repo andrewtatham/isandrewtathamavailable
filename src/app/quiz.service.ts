@@ -34,7 +34,7 @@ export class QuizService {
       'Where is this role based?',
       locations,
       notLocations,
-      'I am only considering roles in the immediate Leeds area, or working remotley.',
+      'I am only considering roles in the immediate Leeds area, or working remotely.',
       questionThree,
       null);
     let questionOne = new Question(
