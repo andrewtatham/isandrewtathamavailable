@@ -1,0 +1,1 @@
+aws s3 cp "dist\is-andrew-tatham-available" "s3://isandrewtathamavailable.com/" --recursive --include "*" --acl public-read
