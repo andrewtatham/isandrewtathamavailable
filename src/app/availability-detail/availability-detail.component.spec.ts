@@ -1,5 +1,7 @@
+import { Component } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AvailabilityDetailComponent } from './availability-detail.component';
+
 
 describe('AvailabilityDetailComponent', () => {
   let component: AvailabilityDetailComponent;
@@ -7,7 +9,10 @@ describe('AvailabilityDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AvailabilityDetailComponent]
+      declarations: [
+        AvailabilityDetailComponent,
+        MockQuizComponent
+      ]
     })
       .compileComponents();
   }));
@@ -21,4 +26,19 @@ describe('AvailabilityDetailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render title in a h1 tag', async(() => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h1').textContent).toEqual('Is Andrew Tatham Available?');
+  }));
+
 });
+
+
+@Component({
+  selector: 'app-quiz',
+  template: ''
+})
+class MockQuizComponent {
+}
+

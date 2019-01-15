@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { QuestionDetailComponent } from './question-detail.component';
+import { MockQuestion } from '../mockquestion';
+
 
 describe('QuestionDetailComponent', () => {
   let component: QuestionDetailComponent;
@@ -8,15 +9,19 @@ describe('QuestionDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ QuestionDetailComponent ]
+      declarations: [
+        QuestionDetailComponent,
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(QuestionDetailComponent);
     component = fixture.componentInstance;
+    component.question = new MockQuestion();
     fixture.detectChanges();
+
   });
 
   it('should create', () => {

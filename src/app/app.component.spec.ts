@@ -6,7 +6,13 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        MockQuizComponent
+        MockAppAvailabilityDetail,
+        MockAppMailingList,
+        MockAppDownloadCv,
+        MockAppEmailMe,
+        MockAppOtherWebsites,
+        MockAppGoogleAnalytics
+
       ],
     }).compileComponents();
   }));
@@ -20,18 +26,50 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('Is Andrew Tatham Available?');
   }));
-  it('should render title in a h1 tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toEqual('Is Andrew Tatham Available?');
-  }));
 });
 
 
+
 @Component({
-  selector: 'app-quiz',
+  selector: 'app-availability-detail',
   template: ''
 })
-class MockQuizComponent {
+class MockAppAvailabilityDetail {
 }
+
+
+@Component({
+  selector: 'app-mailing-list',
+  template: ''
+})
+class MockAppMailingList {
+}
+
+@Component({
+  selector: 'app-download-cv',
+  template: ''
+})
+class MockAppDownloadCv {
+}
+
+@Component({
+  selector: 'app-email-me',
+  template: ''
+})
+class MockAppEmailMe {
+}
+
+@Component({
+  selector: 'app-other-websites',
+  template: ''
+})
+class MockAppOtherWebsites {
+}
+
+@Component({
+  selector: 'app-google-analytics',
+  template: ''
+})
+class MockAppGoogleAnalytics {
+}
+

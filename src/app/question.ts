@@ -1,7 +1,3 @@
-
-
-
-
 export class Question {
 
     questionText: string;

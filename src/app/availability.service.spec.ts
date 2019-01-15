@@ -12,4 +12,9 @@ describe('AvailabilityService', () => {
   it('should be created', inject([AvailabilityService], (service: AvailabilityService) => {
     expect(service).toBeTruthy();
   }));
+
+  it('getAvailability', inject([AvailabilityService], (service: AvailabilityService) => {
+    expect(service.getAvailability()).toBeTruthy();
+  }));
+
 });
