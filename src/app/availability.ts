@@ -13,7 +13,7 @@ export class Availability {
         let availabilityText = "I'm available ";
         if (showAvailability) {
             if (availableImmediatley) {
-                availabilityText += "immediatley";
+                availabilityText += "immediately";
             }
             else {
                 availabilityText += "from " + datePipe.transform(actualAvailableFrom, 'd MMMM yyyy');
