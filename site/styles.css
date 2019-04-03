@@ -1,130 +1,97 @@
 :root {
-    --foo: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.8));
-    --bar: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
-    --box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.5);
-  }
-  
-  @keyframes fade-in-1 {
-      0% {
-        opacity: 0;
-      }
-    
-      100% {
-        opacity: 1;
-      }
-    }
-    
-    @keyframes fade-in-2 {
-      0% {
-        opacity: 0;
-      }
-    
-      50% {
-        opacity: 0;
-      }
-    
-      100% {
-        opacity: 1;
-      }
-    }
-    
-    
-    .fade-in-1 {
-      animation: fade-in-1 1s;
-    }
-    
-    .fade-in-2 {
-      animation: fade-in-2 2s;
-    }
-
-  body,
-  html {
-    font-family: 'Open Sans', sans-serif;    
-    line-height: 1.6em;
-  }
-  
-  #bg {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
-    background: var(--bar);
-    animation: fade-in-1 1s;
-    background-image: url("https://source.unsplash.com/collection/151521");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  .gap {
-    height: 2em;
-  }
-
-
-  .jumbotron {
-    background: var(--foo);
-    -webkit-box-shadow: var(--box-shadow);
-    -moz-box-shadow: var(--box-shadow);
-    box-shadow: var(--box-shadow);
-    text-align: center;
-    margin: 1em;
-    padding: 1em;
-  }
-  
-  .quiz {
-    text-align: center;
-    margin: 1em;
-    padding: 1em;
-  }
-
-  .question {
-    margin: 1em;
-    line-height: 1.4em;
-    font-size: 2em;
-  }
-
-
-  .content {
-    background: var(--foo);
-    border-radius: .3rem;
-    margin: 1em;
-    padding: 1em;
-  
-    -webkit-box-shadow: var(--box-shadow);
-    -moz-box-shadow: var(--box-shadow);
-    box-shadow: var(--box-shadow);
-  }
-
-  .footer {
-    background: var(--foo);
-    border-radius: .3rem;
-    margin: 1em;
-    padding: 1em;
-  
-    -webkit-box-shadow: var(--box-shadow);
-    -moz-box-shadow: var(--box-shadow);
-    box-shadow: var(--box-shadow);
+  --foo: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.8));
+  --bar: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
+  --box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.5);
 }
 
-  
+@keyframes fade-in-1 {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-2 {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.fade-in-1 {
+  animation: fade-in-1 1s;
+}
+
+.fade-in-2 {
+  animation: fade-in-2 2s;
+}
+
+body,
+html {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6em;
+}
+
+#bg {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: var(--bar);
+  animation: fade-in-1 1s;
+  background-image: url("https://source.unsplash.com/collection/151521");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.gap {
+  height: 2em;
+}
+
+.question {
+  margin: 1em;
+  line-height: 1.4em;
+  font-size: 2em;
+}
+
+
+.content {
+  background: var(--foo);
+  border-radius: .3rem;
+  margin: 1em;
+  padding: 1em;
+
+  -webkit-box-shadow: var(--box-shadow);
+  -moz-box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
+}
+
+.footer {
+  background: var(--foo);
+  border-radius: .3rem;
+  margin: 1em;
+  padding: 1em;
+
+  -webkit-box-shadow: var(--box-shadow);
+  -moz-box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
+}
+
+
 .btn {
   margin: 1em;
 }
-
-  /*
-  
-  .alert-auto {
-    display: inline-block;
-  }
-  
-  
-
-  
-  
-  
-  
-
-  
-   */
