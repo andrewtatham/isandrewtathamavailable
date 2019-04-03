@@ -1,1 +1,0 @@
-ng update --all --force
