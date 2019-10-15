@@ -2,7 +2,6 @@
 var i, j, k;
 var currentQuestion = 0;
 var questionElements = [];
-var foo = 'My telephone number is ';
 var bar = 'MDc5ODkzNDE4NDU=';
 
 function emitEvent(action, category, label) {
@@ -16,7 +15,7 @@ function emitEvent(action, category, label) {
 function buildWinner() {
   var winner = $('#winner');
   winner.addClass('alert alert-success clearfix');
-  var phoneText = $('<h1><i class="fa fa-check"></i> ' + foo + '<b>' + atob(bar) + '</b></h1>');
+  var phoneText = $('<h1><i class="fa fa-check"></i>&nbsp;Well done! Please contact me on<br><b>' + atob(bar) + '</b> or <a href="mailto:andrewtatham+website@gmail.com">andrewtatham@gmail.com</a>.<br>Thanks.</h1>');
   winner.append(phoneText);
   return winner;
 }
