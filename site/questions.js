@@ -19,4 +19,9 @@ var questions = [{
   f: "I'm not looking for roles in that technology.",
   y: lookingFor,
   n: notLookingFor
+}, {
+  q: 'Is the role outside IR35?',
+  f: "I'm only considering roles outside IR35.",
+  y: ['Outside IR35', 'IR35 not applicable (e.g. small-sized client in the private sector)'],
+  n: ['Inside IR35']
 }];
