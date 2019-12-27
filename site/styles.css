@@ -1,6 +1,6 @@
 :root {
-  --foo: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.8));
-  --bar: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
+  --foo: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.8));
+  --bar: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
   --box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -52,7 +52,7 @@ html {
   z-index: -2;
   background: var(--bar);
   animation: fade-in-1 1s;
-  background-image: url("https://source.unsplash.com/collection/151521");
+  background-image: url("https://source.unsplash.com/collection/2538801");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
